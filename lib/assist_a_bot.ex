@@ -18,5 +18,6 @@ defmodule AssistABot do
 
   def start_scheduler do
     Taskerville.start()
+    AssistABot.ScheduleDetail.schedule_items()
   end
 end
