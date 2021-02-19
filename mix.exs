@@ -23,7 +23,8 @@ defmodule AssistABot.MixProject do
     [
       {:taskerville, "~> 0.0.1"},
       {:httpoison, "~> 1.8"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
+      {:decimal, "~> 2.0"}
     ]
   end
 end
