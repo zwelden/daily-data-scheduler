@@ -1,14 +1,18 @@
-defmodule Tasks.WeatherGetter do
+defmodule Tasks.Weather.WeatherGetter do
   @locations [
     "Tulsa,OK,USA",
     "Chicago,IL,USA",
     "Beijing,CN"
   ]
 
+  @email_template_path Path.expand("lib/tasks/weather/email_templates", File.cwd!)
+
   def get_all_current_weather do
     @locations
       |> Enum.map(&Task.async(fn -> get_current_weather(&1) end))
       |> Enum.map(&Task.await/1)
+      |> render_email_templates()
+      |> send_email()
   end
 
   def get_current_weather(location) do
@@ -19,6 +23,23 @@ defmodule Tasks.WeatherGetter do
     HTTPoison.get!("#{url}?q=#{loc_query}&appid=#{api_key}")
       |> response_to_map()
       |> extract_data(location)
+  end
+
+  def render_email_templates(weather_reports) do
+    ["weather_email_plain.eex", "weather_email_html.eex"]
+      |> Enum.map(&render_email_template(&1, weather_reports))
+  end
+
+  # "weather_email_plain.eex", "weather_email_html.eex"
+  def render_email_template(template, weather_reports) do
+    template = Path.join(@email_template_path, template)
+
+    EEx.eval_file(template, [weather_reports: weather_reports])
+  end
+
+  def send_email(template) do
+    # DO stuff
+    inspect template
   end
 
   defp response_to_map(response) do
