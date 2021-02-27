@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>*|MC:SUBJECT|*</title>
+        <title>Weather Report</title>
         <style type="text/css">
 			/* /\/\/\/\/\/\/\/\/ CLIENT-SPECIFIC STYLES /\/\/\/\/\/\/\/\/ */
 			#outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
@@ -481,8 +481,8 @@
 													</tr>
 													<tr>
 														<td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><em>Feels Like</em></td>
-														<td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><%= weather["temp_feels_f"] %> / <%= weather["temp_feels_c"] %>/td>
-													</td></tr>
+														<td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><%= weather["temp_feels_f"] %> / <%= weather["temp_feels_c"] %></td>
+													</tr>
 													<tr>
 														<td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><em>High</em></td>
 														<td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><%= weather["temp_max_f"] %> / <%= weather["temp_max_c"] %></td>
@@ -492,8 +492,8 @@
 														<td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><%= weather["temp_min_f"] %> / <%= weather["temp_min_c"] %></td>
 													</tr>
 													<tr>
-														<td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><em>Wind Temp</em></td>
-														<td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><%= weather["wind_f"] %> / <%= weather["wind_c"] %></td>
+														<td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><em>Wind Direction</em></td>
+														<td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><%= weather["wind_dir"] %></td>
 													</tr>
 													<tr>
 														<td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><em>Wind Speed</em></td>
@@ -518,7 +518,7 @@
                                                 <br>
                                                 <strong>Our mailing address is:</strong>
                                                 <br>
-                                                ADDRESS
+                                                <%= email_footer_address %>
                                             </td>
                                         </tr>
                                     </table>

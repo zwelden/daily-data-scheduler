@@ -8,7 +8,11 @@ Current Temperature: <%= weather["temp_f"] %> / <%= weather["temp_c"] %>
 Feels Like: <%= weather["temp_feels_f"] %> / <%= weather["temp_feels_c"] %>
 High: <%= weather["temp_max_f"] %> / <%= weather["temp_max_c"] %>
 Low: <%= weather["temp_min_f"] %> / <%= weather["temp_min_c"] %>
-Wind Temp: <%= weather["wind_f"] %> / <%= weather["wind_c"] %>
+Wind Direction: <%= weather["wind_dir"] %>
 Wind Speed: <%= weather["wind_mph"] %> / <%= weather["wind_kph"] %>
 
 <% end %>
+
+Copyright 2021 Zach Welden, All rights reserved.
+Our mailing address is:
+<%= email_footer_address %>
