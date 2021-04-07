@@ -1,6 +1,6 @@
 defmodule AssistABot.ScheduleDetail do
   @tasks [
-    {"40 21 * * 1-5", "chu_texter", 1, {Tasks.ChuTexter, :send_message, []}}
+    {"30 13 * * 1-5", "chu_texter", 1, {Tasks.ChuTexter, :send_message, []}}
   ]
 
   def schedule_items do
